@@ -69,14 +69,6 @@ labels = ['Beer Consumption by weekdays','Beer Consumption by Weekend']
 values =[weekdays,weekend]
 
 
-#
-#fig = go.Figure(data= [go.Pie(labels = labels,values = values)])
-#
-#fig.update_layout(title = 'Weekly Beer Consumption')
-#
-#fig.show()
-
-
 df = pd.DataFrame({'Consumption':[1252.7071999999998,1503.9815000000006]},
                   index=['Weekdays','Weekend'])
 
@@ -91,27 +83,6 @@ days = ['Beer Consumption by weekdays in a year','Beer Consumption by Weekend in
 
 values =[weekdays1,weekend1]
 
-
-#df1 = pd.DataFrame({'Consumption':[23.998222222222218,28.922721153846165]},
-#                  index=['Weekdays','Weekend'])
-#plot = df1.plot.bar(y='Consumption',figsize=(7,7))
-#
-#consumption = data.iloc[:,-1]
-#dates= data.iloc[:,0]
-#df2= pd.DataFrame({'Consumption':list(consumption)},index=data.Data)
-#
-#temp_data=df2[:7]
-#dates_temp=dates[:7]
-#
-#temp_data['Date']=list(dates_temp)
-#
-#plot=temp_data.plot.scatter(x='Date',y='Consumption',figsize = (7,7))
-
-
-#datadate = data[4:11]
-#fig = go.Figure(data=go.Scatter(x=datadate.Data, y = datadate.Consumo_de_cerveja_litros))
-#fig.update_layout(title='Sample of Weekly Consumption of beer Consumption day by day',xaxis_title="Days",\
-#                  yaxis_title="Beer Consumption")
 
 
 plt.figure(figsize = (10,10))
@@ -239,30 +210,6 @@ X_train, X_test, y_train, y_test = train_test_split(X,Y,test_size=0.25,random_st
 
 def info(yTest_, pred_,sg = 'X'):
     ''' Return resultados '''
-   
-    print(f'''
-{sg}    
-   
-{'-' * 65}
-         
-Mean squared error | {mean_squared_error(yTest_,pred_)}
-r2 Score           | {r2_score(yTest_, pred_)}        
-         
-{'.' * 65}
-y-test max         | {y_test.max()}
-y-test min         | {y_test.min()}
-y-test mean        | {y_test.mean()}
-y-test var         | {y_test.var()}
-{'.' * 65}
-               
-Prediction {sg} max  | {pred_.max()}
-Prediction {sg} min  | {pred_.min()}
-Prediction {sg} Mean | {pred_.mean()}
-Prediction {sg} Var  | {pred_.var()}
-
-         
-{'-' * 65}
-''')
    
 def graphics(y, pred):
    
